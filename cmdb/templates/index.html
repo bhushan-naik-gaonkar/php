@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMDB Portal</title>
+    <style>
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+        .card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; }
+    </style>
+    </head>
+<body>
+    <h1>CMDB Portal</h1>
+    <p>Welcome. Use the links below:</p>
+    <div class="grid">
+        <div class="card">
+            <h3>Resources</h3>
+            <p><a href="/resources/">Browse Resources</a></p>
+            <p><a href="/admin/core/resource/add/">Add Resource</a></p>
+            <p><a href="/api/resources/">API: /api/resources/</a></p>
+        </div>
+        <div class="card">
+            <h3>Departments</h3>
+            <p><a href="/admin/core/department/">Manage in Admin</a></p>
+            <p><a href="/api/departments/">API: /api/departments/</a></p>
+        </div>
+        <div class="card">
+            <h3>Teams</h3>
+            <p><a href="/admin/core/team/">Manage in Admin</a></p>
+            <p><a href="/api/teams/">API: /api/teams/</a></p>
+        </div>
+        <div class="card">
+            <h3>Relationships</h3>
+            <p><a href="/admin/core/resourcerelationship/">Manage in Admin</a></p>
+            <p><a href="/api/relationships/">API: /api/relationships/</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
