@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resource - {{ resource.name }}</title>
+    <style>
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .meta { background: #f9fafb; padding: 1rem; border-radius: 8px; }
+        pre { background: #111827; color: #e5e7eb; padding: 1rem; border-radius: 8px; overflow: auto; }
+    </style>
+</head>
+<body>
+    <p><a href="/resources/">Back to Resources</a></p>
+    <h1>{{ resource.name }}</h1>
+    <p><strong>Type:</strong> {{ resource.get_resource_type_display }}</p>
+    <p><strong>Department:</strong> {{ resource.department }}</p>
+    <p><strong>Owner Team:</strong> {{ resource.owner_team }}</p>
+    <p><strong>Support Teams:</strong> {{ resource.support_teams.all|join:", " }}</p>
+    <p><strong>Tags:</strong> {{ resource.tags.all|join:", " }}</p>
+    <div class="meta">
+        <h3>Description</h3>
+        <p>{{ resource.description|linebreaks }}</p>
+        <h3>Metadata</h3>
+        <pre>{{ resource.metadata|json_script:"metadata" }}</pre>
+    </div>
+</body>
+</html>
+
